@@ -35,6 +35,7 @@ input[type="text"] {
     border-radius: 5px;
     border: 1px solid #697565;
     margin-bottom: 2em;
+    background: #ffff;
 
 }
 
@@ -60,7 +61,7 @@ input[type="text"] {
     background: #3C3D37;
     font-family: "Inter", serif;
     font-weight: 800;
-    color: #E2E2B6;
+    color: #ffff;
 }
 
 .new_btn:hover {
@@ -71,6 +72,11 @@ input[type="text"] {
     display: block;
     padding: .5em 1em;
     margin: 1em 0;
+    border-radius: 5px;
+    color: #ffff;
+    background-color: #1E201E;
+    border: none;
+
 }
 
 .fa-book {
@@ -79,16 +85,18 @@ input[type="text"] {
 
 .book_modal {
     width: 40vh;
-    height: 40vh;
-    background: white;
+    height: 50vh;
+    background: #E9ECEF;
     margin-top: 2em;
     margin: 2em auto;
-    padding: 2em;
+    padding: 1em;
     position: relative;
     border-radius: 5px;
+    display: none;
+    justify-content: center;
 }
 
-.fa-circle-xmark {
+.fa-xmark {
     position: absolute;
     top: 0;
     right: 0;
@@ -96,8 +104,14 @@ input[type="text"] {
     margin: .1em .2em;
 }
 
-.fa-circle-xmark:active,
-.fa-circle-xmark:hover {
+.fa-xmark:active,
+.fa-xmark:hover {
     color: red;
+}
+
+.open_modal {
+    visibility: flex;
+    opacity: 1;
+
 }
 
