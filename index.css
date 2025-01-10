@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", serif;
+    background: #1E201E;
+}
+
+
+
+header .header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    padding: 1.5em;
+}
+
+header {
+    background: #3C3D37;
+    height: auto;
+    color: #E2E2B6;
+}
+
+.heading {
+    font-size: 1.2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .3em;
+}
+
+.new_btn {
+    padding: .5em 1em;
+    border: 2px solid #E2E2B6;
+    border-radius: 5px;
+    background: #3C3D37;
+    font-family: "Inter", serif;
+    font-weight: 800;
+    color: #E2E2B6;
+}
+
+.new_btn:hover {
+    background: #697565;
+}
+
+.fa-book {
+    font-size: 1rem;
+}
+
+.book_modal {
+    width: 40vh;
+    height: 40vh;
+    background: white;
+    margin-top: 2em;
+    margin: 2em auto;
+    padding: 2em;
+    position: relative;
+    border-radius: 5px;
+}
+
+.fa-circle-xmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.4rem;
+    margin: .1em .2em;
+}
+
+.fa-circle-xmark:active,
+.fa-circle-xmark:hover {
+    color: red;
+}
