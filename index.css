@@ -25,6 +25,24 @@ header {
     color: #E2E2B6;
 }
 
+label {
+    display: block;
+    margin: 0;
+}
+
+input[type="text"] {
+    padding: .5em 5em .5em .2em;
+    border-radius: 5px;
+    border: 1px solid #697565;
+    margin-bottom: 2em;
+
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+}
+
 .heading {
     font-size: 1.2rem;
 }
@@ -47,6 +65,12 @@ header {
 
 .new_btn:hover {
     background: #697565;
+}
+
+.add_btn {
+    display: block;
+    padding: .5em 1em;
+    margin: 1em 0;
 }
 
 .fa-book {
@@ -76,3 +100,4 @@ header {
 .fa-circle-xmark:hover {
     color: red;
 }
+
