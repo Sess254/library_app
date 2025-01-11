@@ -5,6 +5,13 @@ const closeBtn = document.getElementById('close_btn')
 
 const myLibrary = []
 
+
+function addToLibrary(title, author, pages, isRead) {
+    const newBook = new Book(title, author, pages, isRead)
+    myLibrary.push(newBook)
+    console.log(newBook)
+}
+
 newBtn.addEventListener('click', () => {
     bookModal.style.display = 'flex'
     console.log('clicked')
@@ -29,14 +36,15 @@ function Book(title, author, pages, isRead) {
 
 const neWbookForm = document.getElementById('book_form')
 
-neWbookForm.addEventListener('submit', (e) => {
+addBtn.addEventListener('click', (e) => {
     e.preventDefault()
     const title = document.getElementById('title').value
     const author = document.getElementById('author').value
     const pages = document.getElementById('pages').value
-    const isRead = document.getElementById('isRead').checked
+    const isRead = document.getElementById('read').checked
 
     addToLibrary(title, author, pages, isRead)
+    neWbookForm.reset()
 })
 
 
