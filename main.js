@@ -18,8 +18,13 @@ addBtn.addEventListener('click', (e) => {
     const author = document.getElementById('author').value
     const pages = document.getElementById('pages').value
     const isRead = document.getElementById('read').checked
-    addToLibrary(title, author, pages, isRead)
-    newBookForm.reset()
+
+    if (title.trim() === '' || author.trim() === '' || pages.trim() === '') {
+        alert('Please fill in all book details.');
+      } else {
+        addToLibrary(title, author, pages, isRead)
+        newBookForm.reset()
+    }
 })
 
 closeBtn.addEventListener('click', (e) => {
@@ -55,46 +60,51 @@ function removeBookFromLibrary(index) {
 function displayLibrary() {
     libraryEl.innerHTML = ""
 
-    myLibrary.map((book, index) => {
-        const bookCard = document.createElement('div')
-        bookCard.classList.add('book_cards')
-
-        const bookTitle = document.createElement('p')
-        bookTitle.textContent = `Title: ${book.title}`
-
-        const bookAuthor = document.createElement('p')
-        bookAuthor.textContent = `Author: ${book.author}`
-
-        const bookPages = document.createElement('p')
-        bookPages.textContent = `Pages: ${book.pages} pages long`
-
-        const readStatus = document.createElement('p')
-        readStatus.textContent = `Read: ${book.isRead ? 'Yes': 'No'}`
-        
-
-        const toggleReadButton = document.createElement('button')
-        toggleReadButton.classList.add('toggle')
-        toggleReadButton.textContent = 'Read?'
-        toggleReadButton.addEventListener('click', () => {
-            book.toggleReadStatus()
-            displayLibrary()
-            console.log(myLibrary)
+    if (myLibrary.length > 0) {
+        myLibrary.map((book, index) => {
+            const bookCard = document.createElement('div')
+            bookCard.classList.add('book_cards')
+    
+            const bookTitle = document.createElement('p')
+            bookTitle.textContent = `Title: ${book.title}`
+    
+            const bookAuthor = document.createElement('p')
+            bookAuthor.textContent = `Author: ${book.author}`
+    
+            const bookPages = document.createElement('p')
+            bookPages.textContent = `Pages: ${book.pages} pages long`
+    
+            const readStatus = document.createElement('p')
+            readStatus.textContent = `Read: ${book.isRead ? 'Yes': 'No'}`
+            
+    
+            const toggleReadButton = document.createElement('button')
+            toggleReadButton.classList.add('toggle')
+            toggleReadButton.textContent = 'Read?'
+            toggleReadButton.addEventListener('click', () => {
+                book.toggleReadStatus()
+                displayLibrary()
+                console.log(myLibrary)
+            })
+    
+            const removeButton = document.createElement('button')
+            removeButton.classList.add('remove')
+            removeButton.textContent = 'Remove'
+            removeButton.addEventListener('click', () => removeBookFromLibrary(index))
+    
+            bookCard.appendChild(bookTitle)
+            bookCard.appendChild(bookAuthor)
+            bookCard.appendChild(bookPages)
+            bookCard.appendChild(bookPages)
+            bookCard.appendChild(readStatus)
+            bookCard.appendChild(toggleReadButton)
+            bookCard.appendChild(removeButton)
+    
+            libraryEl.appendChild(bookCard)
         })
 
-        const removeButton = document.createElement('button')
-        removeButton.classList.add('remove')
-        removeButton.textContent = 'Remove'
-        removeButton.addEventListener('click', () => removeBookFromLibrary(index))
+    }
 
-        bookCard.appendChild(bookTitle)
-        bookCard.appendChild(bookAuthor)
-        bookCard.appendChild(bookPages)
-        bookCard.appendChild(bookPages)
-        bookCard.appendChild(readStatus)
-        bookCard.appendChild(toggleReadButton)
-        bookCard.appendChild(removeButton)
-
-        libraryEl.appendChild(bookCard)
-    })
+  
 }
 
