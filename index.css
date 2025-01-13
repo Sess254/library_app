@@ -30,6 +30,10 @@ label {
     margin: 0;
 }
 
+button {
+    font-family: "Inter", serif;
+}
+
 input[type="text"] {
     padding: .5em 5em .5em .2em;
     border-radius: 5px;
@@ -37,6 +41,10 @@ input[type="text"] {
     margin-bottom: 2em;
     background: #ffff;
 
+}
+
+input[type="checkbox"] {
+    display: block;
 }
 
 .inputs {
@@ -69,14 +77,32 @@ input[type="text"] {
 }
 
 .add_btn {
-    display: block;
+    display: inline-block;
     padding: .5em 1em;
     margin: 1em 0;
     border-radius: 5px;
     color: #ffff;
     background-color: #1E201E;
     border: none;
+    font-weight: 900;
+}
 
+.add_btn:hover {
+    background: #373b37;
+}
+
+.close_btn {
+    padding: .5em 1em;
+    background: #8b0404;
+    color: #ffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 900;
+    margin: 1em 0 1em 4em;
+}
+
+.close_btn:hover {
+    background: #f03131;
 }
 
 .fa-book {
@@ -84,29 +110,17 @@ input[type="text"] {
 }
 
 .book_modal {
-    width: 40vh;
-    height: 50vh;
+    width: 80%;
+    height: auto;
     background: #E9ECEF;
-    margin-top: 2em;
-    margin: 2em auto;
     padding: 1em;
-    position: relative;
+    position: fixed;
+    left: 50%;
+    margin-top: 2em;
+    transform: translateX(-50%);
     border-radius: 5px;
     display: none;
     justify-content: center;
-}
-
-.fa-xmark {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 1.4rem;
-    margin: .1em .2em;
-}
-
-.fa-xmark:active,
-.fa-xmark:hover {
-    color: red;
 }
 
 .open_modal {
@@ -114,4 +128,54 @@ input[type="text"] {
     opacity: 1;
 
 }
+
+.library {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.book_cards {
+    background: #E9ECEF;
+    height: auto;
+    width: 25vh;
+    margin: 1em auto;
+    border-radius: 5px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-items: center;
+    gap: .4em;
+}
+
+
+.read {
+    padding: .2em 1em;
+    background: rgb(2, 71, 2);
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    font-weight: 900;
+}
+
+.not_read {
+    padding: .2em 1em;
+    background: rgb(189, 15, 2);
+    border: none;
+    border-radius: 5px;
+    color: #E2E2B6;
+    font-weight: 900;
+}
+
+.remove {
+    padding: .5em 1em;
+    border-radius: 5px;
+    color: #ffff;
+    background-color: #1E201E;
+    border: none;
+    font-weight: 900;
+}
+
+
 

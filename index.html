@@ -26,9 +26,8 @@
 
     <main>
         <section class="book_modal" id="book_modal">
-            <i class="fa-solid fa-xmark" id="close_btn" aria-label="close button"></i>
             <div class="inputs">
-                <form id="book_form" >
+                <form id="book_form"  >
                     <label for="title">Title:</label>
                     <input 
                         type="text"
@@ -56,15 +55,26 @@
                         name="read" 
                         id="read"
                     >
-
                     <button id="add_book" class="add_btn" type="submit">Add Book</button>
-
-
+                    <button id="close_btn" class="close_btn">Close</button>
                 </form>
 
             </div>
 
         </section>
+
+        <section class="library">
+            <div class="book_cards">
+                <p>The Hobbit</p>
+                <p>J.R.R Tolkien</p>
+                <p>400 pages</p>
+                <button class="read">Read</button>
+                <button class="not_read">Not Read</button>
+                <button class="remove">Remove</button>
+            </div>
+        </section>
+
+
     </main>
 
 
